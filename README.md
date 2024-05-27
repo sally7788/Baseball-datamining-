@@ -1,4 +1,4 @@
- # <p align="center"> 🎮2022~2023년 잠실야구장 관중수 예측 🎮 </p>
+ # <p align="center"> ⚾ 2022~2023년 잠실야구장 관중수 예측 ⚾ </p>
  ## <p align="center"> 데이터마이닝 8조  </p>
 
  ---
@@ -6,6 +6,12 @@
  ## <p align="center"> 🔔 1.개요 🔔 </p>
 
 ##### KBO 관중 150만 시대를 맞이하면서 구단 별 관중 수를 예측하기 위해 경기 요인, 날씨 요인, 경기장 이벤트 등의 추가 요인을 데이터로 구성하여 regression 모델을 사용하였따. 쓰레기 처리 문제 해결, 인파 몰림 예상, 관리 인원 효율적 배치, 대중교통 추가 배치, 구단 내 음식 수요예측을 위해 관중수를 예측할 필요성이 증가하였다. KBO 공식 홈페이지에 기록된 데이터를 기반으로 누적 순위표, 관중 수를 크롤링하였으며 기상청에서 날씨 데이터를 수집하였다. 데이터 전처리, 시각화 이후 Lasso Regression과 SGD Regression, Ridge Regression을 사용하여 최종 모델을 평가하였다. 
+
+
+### <p align="center"> 🔔 7. 발표자료 & train, test data 🔔  </p>
+📌 발표 ppt => [Click Here!](https://youtu.be/d3jnIkHnQaE?si=BAbnH9W2WJpt7Ij)
+
+📌 분석에 사용한 데이터 => [Click Here!]("")
 
 ### 💡데이터 선정 
 #### 1️⃣ 경기 요인: 날짜, 요일, 홈팀, 어웨이 팀, 홈/어웨이 각 순위, 승률, 연승
@@ -34,236 +40,90 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
   
 ### 💡Goal
 
-  <br> We planned a solution using smartphone applications to solve these problems and reduce the seniors' fear of using digital devices. This solution allows seniors to learn and practice functions such as kiosk ordering, movie booking, and bus reservation, and we introduced a reward system to increase their accomplishment  with these exercises.
-
-
+##### 잠실 야구장 관중 수를 예측하여 쓰레기 발생량, 특정 시간 인파 몰림, 이벤트 참여 예상 인원, 구단 내 음식점 판매량을 예측할 수 있다. 이는 쓰레기 처리 문제를 효율적으로 해결할 수 있고, 관리 인원 추가 배치 등 인파 통제 전략을 수립 가능하게 한다. 또한 이벤트와 행사 시점을 선정하고 수량을 주문하는 데에 큰 도움이 되며 음식과 음료의 수익화의 바탕이 된다. 
 ---
 
-## <p align="center"> 🔔 2. Explanation of "OrderAttack" 🔔  </p>
+## <p align="center"> 🔔 2. 모델 학습 🔔  </p>
 
-### 🔔 Login & Register
+### 💡 Lasso Regression  결과
+#### 가장 높은 성능, 데이터에 가장 적합한 모델 
+##### feature selection-25개 특성 선택 
+##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:0.001
 <table style="width: 40%;">
   <tr>
-   <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8.gif" alt="Image 1" style="width: 40%;">
-      <p>Login & Register</p>
-    </td>
+   <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
   </tr>
+ <tr> 
+  <td> Train </td> <td> 0.01347</td> <td> 0.80742</td> <td> 0.11605</td>
+ </tr>
+ <tr> 
+  <td> Test </td> <td> 0.02087</td> <td> 0.64689</td> <td> 0.14446</td>
+ </tr>
 </table>
 
-### 🍔 Ordering by Kiosk Step
+### 💡 SGD Regression  결과
+##### selectKBest(ANOVA F-score) feature selection-25개 특성 선택
+##### standard Scaler 사용 
+##### K-fold cross validation 사용 n_split=5
+##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:10
 <table style="width: 40%;">
   <tr>
-    <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%9B%80%EC%A7%A4%20%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC%20%EC%84%B1%EA%B3%B5.gif" alt="Image 1" style="width: 100%;">
-      <p>Kiosk Step</p>
-    </td>
-   <td style="text-align: center;">
-     <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%E1%84%8F%E1%85%B5%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B32.gif" alt="Image 2" style="width: 100%;">
-      <p>Kiosk Step</p>
-    </td>
+   <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
+  </tr>
+ <tr> 
+  <td> Train </td> <td> 0.01355</td> <td> 0.80618</td> <td> 0.11642</td>
+ </tr>
+ <tr> 
+  <td> Test </td> <td> 0.022 </td> <td> 0.62773</td> <td> 0.14832</td>
+ </tr>
 </table>
 
-#### You will practice ordering food using a kiosk at a fast food restaurant. Real photo verification will help you improve your IT ordering skills.
-
-### 📽Booking a Movie Step
+### 💡 Ridge Regression  결과
+##### feature selection-25개 특성 선택
+##### standard Scaler 사용 
+##### K-fold cross validation 사용 n_split=5
+##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:0.001
 <table style="width: 40%;">
   <tr>
-    <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EB%AC%B4%EB%B9%84%20%EC%9B%80%EC%A7%A4.gif" alt="Image 1" style="width: 100%;">
-      <p>Movie Step</p>
-    </td>
-   <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EB%AC%B4%EB%B9%84%20%EC%84%B1%EA%B3%B5.gif" alt="Image 1" style="width: 100%;">
-      <p>Movie Step</p>
-    </td>
+   <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
   </tr>
+ <tr> 
+  <td> Train </td> <td> 0.01369</td> <td> 0.80417</td> <td> 0.11702</td>
+ </tr>
+ <tr> 
+  <td> Test </td> <td> 0.02268</td> <td> 0.61616</td> <td> 0.0.15061</td>
+ </tr>
 </table>
 
-#### You will practice using the application to book tickets for a movie that is currently playing.
+## <p align="center"> 🔔 3. 기대효과 및 결론 🔔  </p>
+Lasso regression이 가장 좋은 결과를 보였다. 추후 개선할 때에는 더 많은 데이터를 확보하고, 각 시즌별 특성을 고려한 피처를 선택해야 하고, 더 많은 평가 지표를 사용해야하고, 다양한 튜닝 방식을 적용해야 한다. 
 
-### 🍔 Bonus Stage
-<table style="width: 50%;">
-  <tr>
-    <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%E1%84%87%E1%85%A9%E1%84%82%E1%85%A5%E1%84%89%E1%85%B31.gif" alt="Image 1" style="width: 100%;">
-      <p>Bonus stage</p>
-     </td>
-     <td style="text-align: center;">
-     <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%E1%84%87%E1%85%A9%E1%84%82%E1%85%A5%E1%84%89%E1%85%B32.gif" alt="Image 1" style="width: 100%;">
-      <p>Bonus stage</p>
-    </td>
-  </tr>
-</table>
+### 💡 기대효과
+ #### 1️⃣ 마케팅 및 판매 
+ 예측된 관중 수에 맞추어 티켓 프로모션이나 할인 이벤트를 기획할 수 있다. 
 
-#### You will practice using the application to book tickets for a movie that is currently playing.
+#### 2️⃣ 경기 운영 최적화 
+관중 수에 따라 필요한 경기장 스태프의 수를 미리 결정할 수 있어 인력을 효율적으로 운영할 수 있다. 
 
-### 👛 Get Rewards : Wallet
-
-<table style="width: 100%;">
-  <tr>
-    <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC%20%EC%A7%80%EA%B0%91%20%ED%9A%8D%EB%93%9D%20%EC%9B%80%EC%A7%A4.gif" alt="Image 1" style="width: 100%;">
-      <p>Wallet in Kiosk 1st step</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%9B%80%EC%A7%A4%20%EB%AC%B4%EB%B9%84%20%EC%A7%80%EA%B0%91%20%ED%9A%8D%EB%93%9D.gif"alt="Image 1" style="width: 100%;">
-      <p>Wallet in Movie 1st step</p>
-    </td>
-    <td style="text-align: center;">
-      <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%E1%84%87%E1%85%A9%E1%84%82%E1%85%A5%E1%84%89%E1%85%B31.gif" alt="Image 1" style="width: 100%;">
-      <p>Wallet in Kiosk Bonus step</p>
-    </td>
-  </tr>
-</table>
-
-#### As you progress through each level, you'll be able to change your wallet as a reward for your skills. Build your wallet with a sense of accomplishment.
----
-
-## <p align="center"> 🔔 3. Architecture 🔔  </p>
-<img width="1032" alt="오더어택 아키텍쳐" src="https://github.com/leeinsunny/orderattack_photo/blob/main/real_architecture.png">
-
- - 📱 FrontEnd
-   - The app was developed using  Android Studio, Kortlin, and Pigma.
-   - The Google Maps platform was used to utilize the map API.
-
- - 💻 BackEnd
-    - Firebase was used for app data storage and management.
-    - Google login was facilitated through the use of Authentication.
-    - Firestore was used to manage user and other data.      
- - 🧠 AI Model
-   - Tesseract replaces letters with text in photos taken from the gallery  
-   - Google Bert recognizes the text that Tesseract has replaced.
-
----
-## <p align="center"> 🔔 4. Execution Method 🔔  </p>
-### For Android User
-#### 📌 You can download language file => [Click Here!](https://drive.google.com/file/d/1vmn5PTXRt147OB2GA3CgqgqTOmZucqq-/view?usp=sharing)
-#### 📌 Android AVD size=1440*3040
-#### 📌 You have to give permission for INTERNET & Location
-
----
-
-## <p align="center"> 🔔 5. Scalability 🔔  </p>
-### 👑 Ranking System
-<img width="200" alt="오더어택 순위" src="https://github.com/leeinsunny/orderattack_photo/blob/main/rank.png">
-
-- Designed to encourage people to practice continuously ​
-- Allow user to continue their social activities on their own through digital devices.​
-- With RecyclerView for smooth, responsive displays, we handle real-time data effectively, enhancing user interaction. 
+#### 3️⃣ 팬 경험 향상 
+예측된 관중 수에 따라 경기 장 내 서비스 품질을 높일 수 있는 방안을 마련할 수 있다. 
+#### 4️⃣ 날짜 데이터 구분 
+스폰서와 광고 계약 시, 예상 관중 수 데이터를 활용하여 더 유리한 조건을 협상할 수 있다. 
 
 
-### 🎀Decorating Your Wallet
-<img width="200" alt="오더어택 지갑" src="https://github.com/leeinsunny/orderattack_photo/blob/main/wallet.png">
-
-- A gaming element to instill fun and motivate the user to practice by allowing them to acquire a new wallet every step they clear.​
-- Which can be obtained upon clearing a game stage, in the database.
-
-
-### 🏘️ Healing Town
-<img width="200" alt="오더어택 club" src="https://github.com/leeinsunny/orderattack_photo/blob/main/vilage.png">
-
-- Here, seniors can create and participate in the club they want.​
-- This allows seniors to meet offline.
-  
-<img width="200" alt="오더어택 채팅" src="https://github.com/leeinsunny/orderattack_photo/blob/main/chat.png">
-
-- A community page will further engage users, enabling real-time posts and interactions, powered by Firebase’s scalable infrastructure
-
-### 🔣Language Extension
-<img width="200" alt="오더어택 언어확장" src="https://github.com/leeinsunny/orderattack_photo/blob/main/vilage.png">
-
-- It aims to help more seniors escape digital alienation ​by changing the learning language of AI models
+## <p align="center"> 🔔 5. 실행방법 🔔  </p>
 
 
 ---
 
-## <p align="center"> 🔔 6. Member 🔔  </p>
+## <p align="center"> 🔔 4. 팀원 🔔  </p>
 
-| [<img src="https://avatars.githubusercontent.com/u/105425832?v=4">](https://github.com/leeinsunny) |[<img src="https://avatars.githubusercontent.com/u/98581610?v=4">](https://github.com/uykm) | [<img src="https://avatars.githubusercontent.com/u/143007050?v=4">](https://github.com/sally7788) | [<img src="https://avatars.githubusercontent.com/u/136828827?v=4">](https://github.com/Hz2314) |
+| [<img src="https://avatars.githubusercontent.com/u/105425832?v=4">](https://github.com/mouseeater) |[<img src="https://avatars.githubusercontent.com/u/98581610?v=4">](https://github.com/shekxkx) | [<img src="https://avatars.githubusercontent.com/u/143007050?v=4">](https://github.com/sally7788) | [<img src="https://avatars.githubusercontent.com/u/136828827?v=4">](https://github.com/ccccc) |
 |:---:|:---:|:---:|:---:
-이인선|신민규|강연주|박현정
+김민준|최민지|강연주|최지웅 
 
 ---
 
-## <p align="center"> 🔔 7. Youtube & Material 🔔  </p>
-📌 You can see our solution's presentation => [Click Here!](https://youtu.be/d3jnIkHnQaE?si=BAbnH9W2WJpt7Ij)
 
-📌 You can download our solution's presentation material => [Click Here!]("링크")
-
-<table style="width: 100%;">
-    <tr>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C1.PNG" alt="Image 1" style="width: 100%;">
-            <p>1</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C2.PNG" alt="Image 2" style="width: 100%;">
-            <p>2</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C3.PNG" alt="Image 3" style="width: 100%;">
-            <p>3</p>
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C4.PNG" alt="Image 4" style="width: 100%;">
-            <p>4</p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C5.PNG" alt="Image 5" style="width: 100%;">
-            <p>5</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C6.PNG" alt="Image 6" style="width: 100%;">
-            <p>6</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C7.PNG" alt="Image 7" style="width: 100%;">
-            <p>7</p>
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C8.PNG" alt="Image 8" style="width: 100%;">
-            <p>8</p>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C9.PNG" alt="Image 9" style="width: 100%;">
-            <p>9</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C10.PNG" alt="Image 10" style="width: 100%;">
-            <p>10</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C11.PNG" alt="Image 11" style="width: 100%;">
-            <p>11</p>
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C12.PNG" alt="Image 12" style="width: 100%;">
-            <p>12</p>
-        </td>
-    </tr>
-   <tr>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C13.PNG" alt="Image 13" style="width: 100%;">
-            <p>13</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C14.PNG" alt="Image 14" style="width: 100%;">
-            <p>14</p> 
-        </td>
-        <td style="text-align: center;"> 
-            <img src="https://github.com/leeinsunny/orderattack_photo/blob/main/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C15.PNG" alt="Image 15" style="width: 100%;">
-            <p>15</p>
-        </td>
-        <td style="text-align: center;"> 
-              <img src="" alt="" style="width: 100%;">
-            <p></p>
-        </td>
-    </tr>
-</table>
 
 
