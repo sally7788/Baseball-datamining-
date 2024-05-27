@@ -1,4 +1,9 @@
  # <p align="center"> ⚾ 2022~2023년 잠실야구장 관중수 예측 ⚾ </p>
+ 
+<p align="center">
+  <img src="https://github.com/sally7788/Baseball-datamining-/assets/143007050/07ac414c-c19b-4b93-b228-f72f0b1519b6">
+</p>
+
  ## <p align="center"> 데이터마이닝 8조  </p>
 
  ---
