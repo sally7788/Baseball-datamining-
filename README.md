@@ -14,9 +14,9 @@
 
 
 ### <p align="center"> 🔔 7. 발표자료 & train, test data 🔔  </p>
-📌 발표 ppt => [Click Here!](https://youtu.be/d3jnIkHnQaE?si=BAbnH9W2WJpt7Ij)
+📌 발표 ppt => [Click Here!](https://drive.google.com/file/d/1wawFRHTVM69Nje3X5cpX1nskzpd2y9BB/view?usp=sharing)
 
-📌 분석에 사용한 데이터 => [Click Here!]("")
+📌 분석에 사용한 데이터 => [Click Here!](https://drive.google.com/file/d/1AcNk-mEE3DN4pKmjd5q9in9jdaVVeqv8/view?usp=sharing)
 
 ### 💡데이터 선정 
 #### 1️⃣ 경기 요인: 날짜, 요일, 홈팀, 어웨이 팀, 홈/어웨이 각 순위, 승률, 연승
@@ -115,18 +115,15 @@ Lasso regression이 가장 좋은 결과를 보였다. 추후 개선할 때에�
 #### 4️⃣ 날짜 데이터 구분 
 스폰서와 광고 계약 시, 예상 관중 수 데이터를 활용하여 더 유리한 조건을 협상할 수 있다. 
 
-
-## <p align="center"> 🔔 5. 실행방법 🔔  </p>
-
-
 ---
 
 ## <p align="center"> 🔔 4. 팀원 🔔  </p>
 
-| [<img src="https://avatars.githubusercontent.com/u/105425832?v=4">](https://github.com/mouseeater) |[<img src="https://avatars.githubusercontent.com/u/98581610?v=4">](https://github.com/shekxkx) | [<img src="https://avatars.githubusercontent.com/u/143007050?v=4">](https://github.com/sally7788) | [<img src="https://avatars.githubusercontent.com/u/136828827?v=4">](https://github.com/ccccc) |
-|:---:|:---:|:---:|:---:
-김민준|최민지|강연주|최지웅 
 
+|<img src="https://avatars.githubusercontent.com/u/62709976?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/138552558?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/70998377?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/143007050?v=4" width="150" height="150"/>|
+|:-:|:-:|:-:|:-:|
+|[@mouseeater](https://github.com/mouseeater)|[@shekxkx](https://github.com/shekxkx)|[@chlwldnd542](https://github.com/chlwldnd542)|yunjoo<br/>[@sally7788](https://github.com/sally7788)|
+김민준|최민지|최지웅|강연주 
 ---
 
 
