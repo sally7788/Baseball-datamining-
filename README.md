@@ -13,7 +13,7 @@
 ##### KBO 관중 150만 시대를 맞이하면서 구단 별 관중 수를 예측하기 위해 경기 요인, 날씨 요인, 경기장 이벤트 등의 추가 요인을 데이터로 구성하여 regression 모델을 사용하였따. 쓰레기 처리 문제 해결, 인파 몰림 예상, 관리 인원 효율적 배치, 대중교통 추가 배치, 구단 내 음식 수요예측을 위해 관중수를 예측할 필요성이 증가하였다. KBO 공식 홈페이지에 기록된 데이터를 기반으로 누적 순위표, 관중 수를 크롤링하였으며 기상청에서 날씨 데이터를 수집하였다. 데이터 전처리, 시각화 이후 Lasso Regression과 SGD Regression, Ridge Regression을 사용하여 최종 모델을 평가하였다. 
 
 
-### <p align="center"> 🔔 7. 발표자료 & train, test data 🔔  </p>
+### <p align="center"> 🔔 2. 발표자료 & train, test data 🔔  </p>
 📌 발표 ppt => [Click Here!](https://drive.google.com/file/d/1wawFRHTVM69Nje3X5cpX1nskzpd2y9BB/view?usp=sharing)
 
 📌 분석에 사용한 데이터 => [Click Here!](https://drive.google.com/file/d/1AcNk-mEE3DN4pKmjd5q9in9jdaVVeqv8/view?usp=sharing)
@@ -48,7 +48,7 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
 ##### 잠실 야구장 관중 수를 예측하여 쓰레기 발생량, 특정 시간 인파 몰림, 이벤트 참여 예상 인원, 구단 내 음식점 판매량을 예측할 수 있다. 이는 쓰레기 처리 문제를 효율적으로 해결할 수 있고, 관리 인원 추가 배치 등 인파 통제 전략을 수립 가능하게 한다. 또한 이벤트와 행사 시점을 선정하고 수량을 주문하는 데에 큰 도움이 되며 음식과 음료의 수익화의 바탕이 된다. 
 ---
 
-## <p align="center"> 🔔 2. 모델 학습 🔔  </p>
+## <p align="center"> 🔔 3. 모델 학습 🔔  </p>
 
 ### 💡 Lasso Regression  결과
 #### 가장 높은 성능, 데이터에 가장 적합한 모델 
@@ -100,7 +100,7 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
  </tr>
 </table>
 
-## <p align="center"> 🔔 3. 기대효과 및 결론 🔔  </p>
+## <p align="center"> 🔔 4. 기대효과 및 결론 🔔  </p>
 Lasso regression이 가장 좋은 결과를 보였다. 추후 개선할 때에는 더 많은 데이터를 확보하고, 각 시즌별 특성을 고려한 피처를 선택해야 하고, 더 많은 평가 지표를 사용해야하고, 다양한 튜닝 방식을 적용해야 한다. 
 
 ### 💡 기대효과
@@ -117,7 +117,7 @@ Lasso regression이 가장 좋은 결과를 보였다. 추후 개선할 때에�
 
 ---
 
-## <p align="center"> 🔔 4. 팀원 🔔  </p>
+## <p align="center"> 🔔 5. 팀원 🔔  </p>
 
 
 |<img src="https://avatars.githubusercontent.com/u/62709976?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/138552558?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/70998377?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/143007050?v=4" width="150" height="150"/>|
