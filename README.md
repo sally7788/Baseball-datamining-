@@ -70,7 +70,7 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
 ##### selectKBest(ANOVA F-score) feature selection-25개 특성 선택
 ##### standard Scaler 사용 
 ##### K-fold cross validation 사용 n_split=5
-##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:10
+##### GridSearch 이용한 하이퍼파라미터 튜닝-loss='squared_error',*,penalty='l2',alpha=0.0001,l1_Ratio =0.15, fit_intercept=Ture, max_iter=1000, tol=0.001, shuffle=True
 <table style="width: 40%;">
   <tr>
    <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
@@ -87,7 +87,7 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
 ##### feature selection-25개 특성 선택
 ##### standard Scaler 사용 
 ##### K-fold cross validation 사용 n_split=5
-##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:0.001
+##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:10
 <table style="width: 40%;">
   <tr>
    <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
