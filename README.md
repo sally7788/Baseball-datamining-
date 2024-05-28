@@ -15,7 +15,7 @@
 ##### 마지막으로 관중 수를 예측하는 것이 목적이기 때문에 regression 모델을 통해 연속형 변수 예측을 시도한다. 회귀 모델 선정 과정을 통해 Lasso Regression과 SGD Regression, Ridge Regression을 채택하였고 위 모델들의 결과를 비교하여 최종 모델을 완성하려 한다.
 
 ### <p align="center"> 🔔 2. 발표자료 & train, test data 🔔  </p>
-📌 발표 ppt => [Click Here!](https://drive.google.com/file/d/1wawFRHTVM69Nje3X5cpX1nskzpd2y9BB/view?usp=sharing)
+📌 발표 ppt => [Click Here!](https://drive.google.com/file/d/16ybDA9SlLMb0zYxi8NOKv1KtnPCqrZwh/view?usp=sharing)
 
 📌 분석에 사용한 데이터 => [Click Here!](https://drive.google.com/file/d/1AcNk-mEE3DN4pKmjd5q9in9jdaVVeqv8/view?usp=sharing)
 
