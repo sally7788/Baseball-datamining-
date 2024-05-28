@@ -75,10 +75,10 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
    <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
   </tr>
  <tr> 
-  <td> Train </td> <td> 0.01355</td> <td> 0.80618</td> <td> 0.11642</td>
+  <td> Train </td> <td> 0.01369</td> <td> 0.80417</td> <td> 0.11702</td>
  </tr>
  <tr> 
-  <td> Test </td> <td> 0.022 </td> <td> 0.62773</td> <td> 0.14832</td>
+  <td> Test </td> <td> 0.02268 </td> <td> 0.61616</td> <td> 0.15061</td>
  </tr>
 </table>
 
@@ -92,10 +92,10 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
    <td> </td> <th style="text-align: center;"> MSE</th> <th style="text-align: center;"> R^2 </th> <th style="text-align: center;"> RMSE </th>
   </tr>
  <tr> 
-  <td> Train </td> <td> 0.01369</td> <td> 0.80417</td> <td> 0.11702</td>
+  <td> Train </td> <td> 0.01355</td> <td> 0.80618</td> <td> 0.11642</td>
  </tr>
  <tr> 
-  <td> Test </td> <td> 0.02268</td> <td> 0.61616</td> <td> 0.15061</td>
+  <td> Test </td> <td> 0.022</td> <td> 0.62773</td> <td> 0.14832</td>
  </tr>
 </table>
 
