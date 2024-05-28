@@ -51,7 +51,7 @@ LG:0, 두산:1, KIA:2, KT:3, NC:4, SSG:5, 롯데:6, 삼성:7, 키움: 8, 한화:
 
 ### 💡 Lasso Regression  결과
 #### 가장 높은 성능, 데이터에 가장 적합한 모델 
-##### feature selection-25개 특성 선택 
+##### selectKBest(ANOVA F-score) feature selection-25개 특성 선택
 ##### GridSearch 이용한 하이퍼파라미터 튜닝-alpha:0.001
 <table style="width: 40%;">
   <tr>
